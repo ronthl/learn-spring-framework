@@ -10,5 +10,7 @@ public class Main {
 
         var p = context.getBean(Parrot.class);
         System.out.println(p);
+
+        context.removeBeanDefinition("parrot");
     }
 }

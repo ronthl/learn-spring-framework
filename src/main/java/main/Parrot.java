@@ -3,6 +3,7 @@ package main;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 @Component
 public class Parrot {
@@ -12,6 +13,11 @@ public class Parrot {
     @PostConstruct
     private void init() {
         this.name = "Kiki";
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println(this.name + " is being destroyed!");
     }
 
     public String getName() {
