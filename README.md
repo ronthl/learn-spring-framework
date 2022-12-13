@@ -3,8 +3,8 @@
 ![](https://img.shields.io/badge/License-MIT-grey?style=flat-square&logo=license&labelColor=blue&logoColor=white)
 
 ## Introduction
-This branch is to demonstrate how to use the `@PostConstruct` annotation to instruct Spring
-executes after the bean creation.
+This branch is to demonstrate how to use the `@PreDestroy` annotation to instruct Spring
+executes before removing beans.
 
 ## Instruction
 1. Add `javax.annotation-api` dependency.
@@ -15,9 +15,7 @@ https://github.com/ronthl/learn-spring-framework/blob/2e97708e266e63dd2219e840f2
 3. Call `removeBeanDefinition` method to remove the Parrot bean.
    https://github.com/ronthl/learn-spring-framework/blob/2e97708e266e63dd2219e840f2f2f711441be22c/src/main/java/main/Main.java#L14
 4. Run the `main` method in the `Main` class, you'll see the message:
-```text
-Kiki is being destroyed!
-```
+`Kiki is being destroyed!`
 
 ## Notes
 Spring only supports `javax.annotation-api` (annotation-api v1).
