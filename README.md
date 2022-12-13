@@ -18,6 +18,13 @@ https://github.com/ronthl/learn-spring-framework/blob/2e97708e266e63dd2219e840f2
 `Kiki is being destroyed!`
 
 ## Notes
+### Avoid using `@PreDestroy`
+Generally I recommend developers avoid using the `@PreDestroy` annotation
+and find a different approach to executing something before Spring clears the context,
+mainly because you can expect Spring fail to clear the context.
+Say you defined something sensitive (like closing a database connection) in the `@PreDestroy` method;
+if Spring doesn't call the method, you may get into big problems.
+### Supported `annotation-api` version
 Spring only supports `javax.annotation-api` (annotation-api v1).
 And it does not support `jakarta.annotation-api` (annotation-api v2)
 even the annotation-api v1 is archived.
